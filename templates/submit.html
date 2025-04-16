@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Submit a Recipe</title>
+</head>
+<body>
+    <header>
+        <h1>Submit a Recipe</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('recipes') }}">View Recipes</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <form action="{{ url_for('submit') }}" method="POST">
+            <label for="DishName">Dish Name:</label>
+            <input type="text" name="DishName" required>
+            <br>
+            <label for="Description">Description:</label>
+            <input type="text" name="Description">
+            <br>
+            <label for="Spice">Spice:</label>
+            <input type="text" name="Spice">
+            <br>
+            <label for="PrepTime">Preparation Time:</label>
+            <input type="text" name="PrepTime">
+            <br>
+            <label for="CookTime">Cooking Time:</label>
+            <input type="text" name="CookTime">
+            <br>
+            <label for="Serves">Serves:</label>
+            <input type="number" name="Serves">
+            <br>
+            <label for="DietaryInfo">Dietary Information:</label>
+            <input type="text" name="DietaryInfo">
+            <br>
+            <label for="Ingredients">Ingredients:</label>
+            <input type="text" name="Ingredients" required>
+            <br>
+            <label for="Instructions">Instructions:</label>
+            <input type="text" name="Instructions" required>
+            <br>
+            <input type="submit" value="Submit Recipe">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Cooking Recipes</p>
+    </footer>
+</body>
+</html>

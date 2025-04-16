@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Recipes</title>
+</head>
+<body>
+    <header>
+        <h1>Cooking Recipes</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('submit') }}">Submit a Recipe</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Recipe List</h2>
+        <form action="{{ url_for('search') }}" method="GET">
+            <input type="text" name="query" placeholder="Search for recipes..." required>
+            <input type="submit" value="Search">
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Dish Name</th>
+                    <th>Spice</th>
+                    <th>Dietary Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for recipe in recipes %}
+                <tr>
+                    <td><a href="{{ url_for('recipe_detail', recipe_id=recipe.id) }}">{{ recipe.DishName }}</a></td>
+                    <td>{{ recipe.Spice }}</td>
+                    <td>{{ recipe.DietaryInfo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Cooking Recipes</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>{{ recipe.DishName }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ recipe.DishName }}</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('recipes') }}">Back to Recipes</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Description</h2>
+        <p>{{ recipe.Description }}</p>
+        
+        <h2>Ingredients</h2>
+        <p>{{ recipe.Ingredients }}</p>
+        
+        <h2>Instructions</h2>
+        <p>{{ recipe.Instructions }}</p>
+        
+        <h2>Spice Level</h2>
+        <p>{{ recipe.Spice }}</p>
+        
+        <h2>Dietary Info</h2>
+        <p>{{ recipe.DietaryInfo }}</p>
+        
+        <h2>Preparation Time</h2>
+        <p>{{ recipe.PrepTime }}</p>
+        
+        <h2>Cooking Time</h2>
+        <p>{{ recipe.CookTime }}</p>
+        
+        <h2>Serves</h2>
+        <p>{{ recipe.Serves }}</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Cooking Recipes</p>
+    </footer>
+</body>
+</html>

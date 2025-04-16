@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Home - Cooking Recipes</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Cooking Recipes</h1>
+        <nav>
+            <a href="{{ url_for('recipes') }}">View Recipes</a>
+            <a href="{{ url_for('submit') }}">Submit a Recipe</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Discover Delicious Recipes</h2>
+        <p>Explore a variety of recipes, submit your own, and share your culinary creations with others!</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Cooking Recipes</p>
+    </footer>
+</body>
+</html>
