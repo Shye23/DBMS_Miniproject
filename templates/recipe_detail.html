@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>{{ recipe.DishName }}</title>
+    <title>{{ recipe.dish_name }}</title>
 </head>
 <body>
     <header>
-        <h1>{{ recipe.DishName }}</h1>
+        <h1>{{ recipe.dish_name }}</h1>
         <nav>
             <a href="{{ url_for('index') }}">Home</a>
             <a href="{{ url_for('recipes') }}">Back to Recipes</a>
@@ -17,28 +17,28 @@
 
     <main>
         <h2>Description</h2>
-        <p>{{ recipe.Description }}</p>
+        <p>{{ recipe.description }}</p>
         
         <h2>Ingredients</h2>
-        <p>{{ recipe.Ingredients }}</p>
+        <p>{{ recipe.ingredients }}</p>
         
         <h2>Instructions</h2>
-        <p>{{ recipe.Instructions }}</p>
+        <p>{{ recipe.instructions }}</p>
         
         <h2>Spice Level</h2>
-        <p>{{ recipe.Spice }}</p>
+        <p>{{ recipe.spice }}</p>
         
         <h2>Dietary Info</h2>
-        <p>{{ recipe.DietaryInfo }}</p>
+        <p>{{ recipe.dietary_info }}</p>
         
         <h2>Preparation Time</h2>
-        <p>{{ recipe.PrepTime }}</p>
+        <p>{{ recipe.prep_time }}</p>
         
         <h2>Cooking Time</h2>
-        <p>{{ recipe.CookTime }}</p>
+        <p>{{ recipe.cook_time }}</p>
         
         <h2>Serves</h2>
-        <p>{{ recipe.Serves }}</p>
+        <p>{{ recipe.serves }}</p>
     </main>
 
     <footer>

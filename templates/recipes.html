@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Recipes</title>
 </head>
+
 <body>
     <header>
         <h1>Cooking Recipes</h1>
@@ -35,9 +37,9 @@
             <tbody>
                 {% for recipe in recipes %}
                 <tr>
-                    <td><a href="{{ url_for('recipe_detail', recipe_id=recipe.id) }}">{{ recipe.DishName }}</a></td>
-                    <td>{{ recipe.Spice }}</td>
-                    <td>{{ recipe.DietaryInfo }}</td>
+                    <td><a href="{{ url_for('recipe_detail', recipe_id=recipe.id) }}">{{ recipe.dish_name }}</a></td>
+                    <td>{{ recipe.spice }}</td>
+                    <td>{{ recipe.dietary_info }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -48,4 +50,5 @@
         <p>&copy; 2023 Cooking Recipes</p>
     </footer>
 </body>
+
 </html>

@@ -1,98 +1,91 @@
+/* Global */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #fffaf4;
+    color: #333;
 }
 
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
 header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
-    text-align: center;
+    background: #ff6f61;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 header h1 {
     margin: 0;
+    font-size: 2rem;
 }
 
 nav {
-    margin: 10px 0;
+    margin-top: 10px;
 }
 
 nav a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     margin: 0 15px;
+    font-weight: bold;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
+/* Main */
 main {
-    padding: 20px;
-    background: #ffffff;
-    max-width: 800px;
-    margin: 20px auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    text-align: center;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.intro-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
 }
 
-form label {
-    margin: 10px 0 5px;
+.intro-card h2 {
+    font-size: 2rem;
+    color: #ff6f61;
 }
 
-form input[type="text"],
-form input[type="password"],
-form input[type="number"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.intro-card p {
+    font-size: 1.2rem;
+    margin: 20px 0;
 }
 
-form input[type="submit"] {
-    background: #35424a;
-    color: #ffffff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+.cta-button {
+    display: inline-block;
+    background: #ff6f61;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
-form input[type="submit"]:hover {
-    background: #4a5d6a;
+.cta-button:hover {
+    background: #e65b50;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th, table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-table th {
-    background: #35424a;
-    color: #ffffff;
-}
-
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 15px 0;
+    background: #ff6f61;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 0.9rem;
 }

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import mysql.connector
+from mysql.connector import Error
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -9,7 +10,7 @@ app.secret_key = 'a'  # Change this to a random secret key
 db_config = {
     'host': 'localhost',
     'user': 'root',  # Replace with your MySQL username
-    'password': 'aditi',  # Replace with your MySQL password
+    'password': 'Shweta@23*',  # Replace with your MySQL password
     'database': 'recipe'  # Replace with your MySQL database name
 }
 
@@ -22,18 +23,17 @@ def recipes():
     try:
         connection = mysql.connector.connect(**db_config)
         cursor = connection.cursor(dictionary=True)
-        
-        # Fetch the id along with other fields
-        cursor.execute('SELECT id, DishName, Spice, DietaryInfo FROM recipes')
-        results = cursor.fetchall()
-        
-        return render_template('recipes.html', recipes=results)
-    except mysql.connector.Error as err:
-        return jsonify({'error': str(err)})
+        cursor.execute("SELECT * FROM recipes")
+        data = cursor.fetchall()
+    except mysql.connector.Error as e:
+        print(f"Database error: {e}")
+        data = []
     finally:
         if connection.is_connected():
             cursor.close()
             connection.close()
+
+    return render_template("recipes.html", recipes=data)
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
@@ -72,8 +72,8 @@ def search():
         cursor = connection.cursor(dictionary=True)
         
         # Ensure the id field is included in the SELECT statement
-        cursor.execute('SELECT id, DishName, Spice, DietaryInfo FROM recipes WHERE DishName LIKE %s OR Ingredients LIKE %s', 
-                       ('%' + query + '%', '%' + query + '%'))
+        cursor.execute('SELECT id, dish_name, spice, dietary_info FROM recipes WHERE dish_name LIKE %s OR ingredients LIKE %s',
+               ('%' + query + '%', '%' + query + '%'))
         results = cursor.fetchall()
         
         return render_template('recipes.html', recipes=results)
